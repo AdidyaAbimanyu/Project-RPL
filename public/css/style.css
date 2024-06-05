@@ -1,0 +1,63 @@
+html,
+body {
+    height: 100%;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+#bdSidebar {
+    width: 300px;
+}
+
+.mynav li span {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    padding: 8px 5px;
+}
+
+.mynav li span.active {
+    background: #688F4E;
+    color: white;
+    border-top-right-radius: 50px;
+}
+
+.mynav li span i {
+    width: 30px;
+    text-align: center;
+}
+
+/* .notification-badge {
+    background-color: rgba(255, 255, 255, 0.7);
+    float: right;
+    color: #222;
+    font-size: 14px;
+    padding: 0px 8px;
+    border-radius: 2px;
+} */
+
+
+
+/*  */
+.navbar-brand {
+    left: 90px;
+}
+
+body .bg-white {
+    background-color: #F4F1E9 !important;
+}
+
+body .bg-success {
+    background-color: #688F4E !important;
+}
+
+.bg-success-2 {
+    background-color: #B1D182;
+}
+
+.btn-success {
+    background-color: #2B463C !important;
+}
+
+.card {
+    background-color: #F4F1E9 !important;
+}
