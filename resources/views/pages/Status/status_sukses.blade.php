@@ -5,6 +5,9 @@
             <div class="card-body">
                 <i class="fa-solid fa-circle-check my-5" style="font-size: 200px;"></i>
                 <h1 class="fw-bold mb-5 text-success">Pembayaran Berhasil</h1>
+                <div class="my-3">
+                    <a href="{{ url('/struk') }}" class="btn btn-primary">Selanjutnya</a>
+                </div>
             </div>
         </div>
     </div>

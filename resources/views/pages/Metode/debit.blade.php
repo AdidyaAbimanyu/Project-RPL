@@ -5,6 +5,14 @@
             <div class="card-body">
                 <h1 class="fw-bold my-5">Gesek kartu anda<br>dibawah</h1>
                 <i class="fa-solid fa-arrow-down-long mb-5" style="font-size: 200px;"></i>
+                <form method="POST" action="{{ route('submit.nominal') }}">
+                    @csrf
+                    <h2 class="fw-bold"> Harga Tiket: Rp 20.000</h2>
+                    <input type="hidden" name="nominal" value="20000"> <!-- Input hidden dengan nilai tetap 20000 -->
+                    <div class="my-3">
+                        <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
