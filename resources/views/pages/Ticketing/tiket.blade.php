@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ url('/pembayaran') }}"class="btn btn-success px-4 fw-bold fs-5">Selanjutnya</a>
+                <a href="{{ url('/pembayaran') }}"class="btn btn-success px-4 fw-bold fs-5" id="create-session">Selanjutnya</a>
             </div>
 
 
@@ -63,4 +63,12 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('create-session').addEventListener('click', function() {
+            // Lakukan request AJAX ke endpoint yang akan membuat session
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '{{ route("create.session") }}', true);
+            xhr.send();
+        });
+    </script>
 @stop

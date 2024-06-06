@@ -6,7 +6,7 @@
                 <div class="my-5">{!! $qrCode !!}</div>
                 <form method="POST" action="{{ route('submit.nominal') }}">
                     @csrf
-                    <h2 class="fw-bold"> Harga Tiket: Rp 20.000</h2>
+                    <h2 class="fw-bold"> Harga Tiket: Rp {{ number_format(Session::get('value') , 0, ',', '.') }}</h2>
                     <input type="number" class="form-control" id="nominal" name="nominal" placeholder="Masukkan nominal">
                     <div class="my-3">
                         <button type="submit" class="btn btn-primary">Selanjutnya</button>
