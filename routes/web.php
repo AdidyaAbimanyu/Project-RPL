@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
@@ -32,3 +33,11 @@ Route::get('/create-session', [PaymentController::class, 'createSession'])->name
 Route::get('/struk', function() {
     return view('pages.Status.struk');
 });
+
+// Login admin
+
+Route::get('/login', [AdminController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AdminController::class, 'login']);
+Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+Route::get('/home', [AdminController::class, 'index'])->name('home')->middleware('auth');
+

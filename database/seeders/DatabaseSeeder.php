@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             TiketTableSeeder::class,
+            AdminSeeder::class,
             // Tambahkan seeder lain jika diperlukan
         ]);
     }
