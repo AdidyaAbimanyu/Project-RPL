@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tiket;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TiketController extends Controller
 {
@@ -13,12 +14,26 @@ class TiketController extends Controller
      */
     public function index()
     {
+        $tiket = DB::table('tikets')->get();
+
         // Ambil harga tiket untuk Anak-anak dan Dewasa dari database
         $anak = Tiket::where('nama_tiket', 'Anak - anak')->first();
         $dewasa = Tiket::where('nama_tiket', 'Dewasa')->first();
 
         // Kirim data ke view
         return view('pages.Ticketing.tiket', compact('anak', 'dewasa'));
+    }
+
+    /**
+     * Display the admin management view with all tickets.
+     */
+    public function manageTiket()
+    {
+        // Retrieve all tickets from the database
+        $tiket = DB::table('tikets')->get();
+
+        // Pass the tickets data to the admin management view
+        return view('pages.admin.managetiket', ['tiket' => $tiket]);
     }
 
     /**

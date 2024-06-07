@@ -41,3 +41,10 @@ Route::post('/login', [AdminController::class, 'login']);
 Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/home', [AdminController::class, 'index'])->name('home')->middleware('auth');
 
+
+// Coba Admin
+Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('manage-tiket');
+
+Route::get('/laporan-pengunjung', function () {
+    return view('pages.admin.laporan');
+})->name('laporan-pengunjung');
