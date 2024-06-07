@@ -11,11 +11,11 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.welcome');
+        return view('pages.admin.welcome');
     }
     public function showLoginForm()
     {
-        return view('admin.login');
+        return view('pages.admin.login');
     }
 
     public function login(Request $request)
