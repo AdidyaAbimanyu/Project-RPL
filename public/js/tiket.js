@@ -32,31 +32,4 @@ $(document).ready(function() {
             $jumlahDewasa.text(countDewasa);
         }
     });
-
-    // function simpanJumlah() {
-    //     $.ajax({
-    //         url: '{{ route("pesan-tiket") }}',
-    //         method: 'POST',
-    //         data: {
-    //             jumlahAnak: countAnak,
-    //             jumlahDewasa: countDewasa,
-    //             _token: '{{ csrf_token() }}'
-    //         },
-    //         success: function(response) {
-    //             if (response.success) {
-    //                 window.location.href = '{{ route("pembayaran.qris") }}';
-    //             } else {
-    //                 alert('Gagal menyimpan jumlah');
-    //             }
-    //         },
-    //         error: function() {
-    //             alert('Terjadi kesalahan');
-    //         }
-    //     });
-    // }
-
-    // $('.btn-success').on('click', function(event) {
-    //     event.preventDefault();
-    //     simpanJumlah();
-    // });
 });
