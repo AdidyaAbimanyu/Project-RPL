@@ -27,7 +27,7 @@ Route::get('/tiket', [TiketController::class, 'index', 'store'])->name('pesan-ti
 Route::get('/pembayaran/qris', [PaymentController::class, 'generateQRCode'])->name('qris');
 Route::get('/pages/Ticketing/pembayaran', [PaymentController::class, 'showPayment'])->name('payment');
 Route::post('/submit-nominal', [PaymentController::class, 'submit'])->name('submit.nominal');
-Route::get('/create-session', [PaymentController::class, 'createSession'])->name('create.session');
+Route::post('/create-session', [PaymentController::class, 'createSession'])->name('create.session');
 
 
 Route::get('/struk', function() {

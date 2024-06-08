@@ -14,9 +14,17 @@ class PaymentController extends Controller
 {
     public function createSession(Request $request)
     {
-        Session::put('value', 150300);
-        Session::put('tiket_dewasa', 2);
-        Session::put('tiket_anak', 1);
+        $jumlahAnak = $request->input('jumlah_anak');
+        $jumlahDewasa = $request->input('jumlah_dewasa');
+
+        $hargaAnak = Tiket::where('nama_tiket', 'Anak - anak')->first()->harga;
+        $hargaDewasa = Tiket::where('nama_tiket', 'Dewasa')->first()->harga;
+
+        $value = ($hargaAnak * $jumlahAnak) + ($hargaDewasa * $jumlahDewasa);
+
+        Session::put('value', $value);
+        Session::put('tiket_dewasa', $jumlahDewasa);
+        Session::put('tiket_anak', $jumlahAnak);
     }
 
     public function generateQRCode(Request $request)
