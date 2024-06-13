@@ -13,7 +13,7 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.admin.laporan');
     }
 
     /**
@@ -29,7 +29,19 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'dateFrom' => 'required|date',
+            'dateTo' => 'required|date|after_or_equal:dateFrom',
+        ]);
+
+        $dateFrom = $request->input('dateFrom');
+        $dateTo = $request->input('dateTo');
+
+        $data = Laporan::whereBetween('tanggal', [$dateFrom, $dateTo])
+        ->selectRaw('SUM(jumlah_pengunjung_dewasa) as total_dewasa, SUM(jumlah_pengunjung_anak) as total_anak')
+        ->first();
+
+        return view('pages.admin.laporan', compact('data', 'dateFrom', 'dateTo'));
     }
 
     /**

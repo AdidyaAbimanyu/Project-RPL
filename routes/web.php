@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiketController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
@@ -45,10 +46,9 @@ Route::get('/home', [AdminController::class, 'index'])->name('home')->middleware
 // Coba Admin
 Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('manage-tiket');
 
-Route::get('/laporan-pengunjung', function () {
-    return view('pages.admin.laporan');
-})->name('laporan-pengunjung');
-
 Route::put('/tiket/{id}', [TiketController::class, 'update'])->name('manage-tiket.update');
 Route::get('/manage-tiket/edit/{id}', [TiketController::class, 'edit'])->name('manage-tiket.edit');
 Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('manage-tiket.destroy');
+
+Route::get('/laporan-pengunjung', [LaporanController::class, 'index'])->name('laporan.pengunjung');
+Route::post('/laporan-pengunjung', [LaporanController::class, 'store'])->name('laporan.pengunjung.post');
