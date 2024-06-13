@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="container-fluid p-0 d-flex h-100">
+    <div class="admin-layout container-fluid p-0 d-flex">
         @include('includes.sidebaradmin')
         @yield('content')
     </div>

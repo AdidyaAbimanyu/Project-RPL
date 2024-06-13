@@ -52,3 +52,6 @@ Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('man
 
 Route::get('/laporan-pengunjung', [LaporanController::class, 'index'])->name('laporan.pengunjung');
 Route::post('/laporan-pengunjung', [LaporanController::class, 'store'])->name('laporan.pengunjung.post');
+
+
+Route::post('/laporan/export', [LaporanController::class, 'export'])->name('laporan.export');

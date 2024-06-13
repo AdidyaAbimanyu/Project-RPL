@@ -4,6 +4,10 @@ body {
     /* font-family: 'Ubuntu', sans-serif; */
 }
 
+.admin-layout {
+    min-height: 100%;
+}
+
 #bdSidebar {
     width: 300px;
 }
