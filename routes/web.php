@@ -48,3 +48,7 @@ Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('mana
 Route::get('/laporan-pengunjung', function () {
     return view('pages.admin.laporan');
 })->name('laporan-pengunjung');
+
+Route::put('/tiket/{id}', [TiketController::class, 'update'])->name('manage-tiket.update');
+Route::get('/manage-tiket/edit/{id}', [TiketController::class, 'edit'])->name('manage-tiket.edit');
+Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('manage-tiket.destroy');

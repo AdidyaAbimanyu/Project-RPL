@@ -77,24 +77,39 @@ class TiketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tiket $tiket)
+    public function edit($id)
     {
-        //
+        $tiket = Tiket::findOrFail($id);
+        return view('pages.admin.formmanagetiket', compact('tiket'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tiket $tiket)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_tiket' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'ketersediaan' => 'required|numeric',
+        ]);
+    
+        $tiket = Tiket::findOrFail($id);
+        $tiket->nama_tiket = $request->nama_tiket;
+        $tiket->harga = $request->harga;
+        $tiket->ketersediaan = $request->ketersediaan;
+        $tiket->save();
+    
+        return redirect()->route('manage-tiket')->with('success', 'Tiket berhasil diupdate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tiket $tiket)
+    public function destroy($id)
     {
-        //
+        $tiket = Tiket::findOrFail($id);
+        $tiket->delete();
+        return redirect()->back()->with('success', 'Tiket berhasil dihapus');
     }
 }

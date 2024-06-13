@@ -20,8 +20,8 @@
                         <td>{{ $t->harga }}</td>
                         <td>{{ $t->ketersediaan }}</td>
                         <td>
-                            <a href="#" class="btn btn-danger me-3">Delete</a>
-                            <a href="#" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('manage-tiket.edit', $t->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('manage-tiket.destroy', $t->id) }}" class="btn btn-danger me-3" onclick="return confirm('Apakah anda ingin menghapus?')">Delete</a>
                         </td>
                     </tr>
                 @endforeach
