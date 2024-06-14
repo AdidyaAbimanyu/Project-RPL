@@ -44,14 +44,13 @@ Route::get('/home', [AdminController::class, 'index'])->name('home')->middleware
 
 
 // Coba Admin
-Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('manage-tiket');
+Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('manage-tiket')->middleware('auth');
 
-Route::put('/tiket/{id}', [TiketController::class, 'update'])->name('manage-tiket.update');
-Route::get('/manage-tiket/edit/{id}', [TiketController::class, 'edit'])->name('manage-tiket.edit');
-Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('manage-tiket.destroy');
+Route::put('/tiket/{id}', [TiketController::class, 'update'])->name('manage-tiket.update')->middleware('auth');
+Route::get('/manage-tiket/edit/{id}', [TiketController::class, 'edit'])->name('manage-tiket.edit')->middleware('auth');
+Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('manage-tiket.destroy')->middleware('auth');
 
-Route::get('/laporan-pengunjung', [LaporanController::class, 'index'])->name('laporan.pengunjung');
-Route::post('/laporan-pengunjung', [LaporanController::class, 'store'])->name('laporan.pengunjung.post');
+Route::get('/laporan-pengunjung', [LaporanController::class, 'index'])->name('laporan.pengunjung')->middleware('auth');
+Route::post('/laporan-pengunjung', [LaporanController::class, 'store'])->name('laporan.pengunjung.post')->middleware('auth');
 
-
-Route::post('/laporan/export', [LaporanController::class, 'export'])->name('laporan.export');
+Route::post('/laporan/export', [LaporanController::class, 'export'])->name('laporan.export')->middleware('auth');
