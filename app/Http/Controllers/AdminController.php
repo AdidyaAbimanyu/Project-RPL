@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +30,7 @@ class AdminController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/home');
         } else {
-            return redirect()->route('login')->with('error', $credentials['password']);
+            return redirect()->route('login')->with('error', 'Login Failed');
         }
     }
 
