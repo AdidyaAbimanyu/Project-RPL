@@ -1,7 +1,7 @@
 @extends('layouts.progress')
 @section('content')
-    <div class="bg-success-2 flex-fill">
-        <div class="row d-flex h-100 align-items-center">
+    <div class="content content-3 flex-fill">
+        <div class="row d-flex h-100 align-items-center m-0">
             <div class="col-6 d-flex flex-column align-items-center">
                 <div class="card text-center border-0 rounded-4" style="width: 18rem;">
                     <div class="card-header border-0 bg-success rounded-4 text-white">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <span class="h-100 fw-bold" style="margin-bottom: 10px; display: none;" id="harga-total">0</span>
+                {{-- <span class="h-100 fw-bold" style="margin-bottom: 10px; display: none;" id="harga-total">0</span> --}}
                 <a href="{{ url('/pembayaran') }}"class="btn btn-success px-4 fw-bold fs-5" id="create-session">Selanjutnya</a>
             </div>
 

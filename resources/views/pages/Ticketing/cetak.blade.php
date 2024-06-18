@@ -1,6 +1,6 @@
 @extends('layouts.progress')
 @section('content')
-    <div class="bg-success-2 flex-fill d-flex justify-content-center align-items-center">
+    <div class="content content-2 flex-fill d-flex justify-content-center align-items-center">
         <a href="" class="text-decoration-none">
             <div class="card text-center border-0 rounded-4" style="width: 36rem;">
                 <div class="card-body">

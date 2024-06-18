@@ -1,6 +1,6 @@
 @extends('layouts.progress')
 @section('content')
-    <div class="bg-success-2 flex-fill d-flex justify-content-center align-items-center">
+    <div class="content content-1 flex-fill d-flex justify-content-center align-items-center">
         <div class="card text-center border-0 rounded-4" style="width: 36rem;">
             <div class="card-body">
                 <h1 class="fw-bold my-5">Gesek kartu anda<br>dibawah</h1>
@@ -10,7 +10,7 @@
                     <h2 class="fw-bold"> Harga Tiket: Rp {{ number_format(Session::get('value') , 0, ',', '.') }}</h2>
                     <input type="hidden" name="nominal" value="{{Session::get('value')}}">
                     <div class="my-3">
-                        <button type="submit" class="btn btn-primary">Konfirmasi</button>
+                        <button type="submit" class="btn btn-success px-5">Konfirmasi</button>
                     </div>
                 </form>
             </div>

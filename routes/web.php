@@ -43,14 +43,12 @@ Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/home', [AdminController::class, 'index'])->name('home')->middleware('auth');
 
 
-// Coba Admin
+// Admin
 Route::get('/manage-tiket', [TiketController::class, 'manageTiket'])->name('manage-tiket')->middleware('auth');
-
 Route::put('/tiket/{id}', [TiketController::class, 'update'])->name('manage-tiket.update')->middleware('auth');
 Route::get('/manage-tiket/edit/{id}', [TiketController::class, 'edit'])->name('manage-tiket.edit')->middleware('auth');
 Route::get('/manage-tiket/{id}', [TiketController::class, 'destroy'])->name('manage-tiket.destroy')->middleware('auth');
 
 Route::get('/laporan-pengunjung', [LaporanController::class, 'index'])->name('laporan.pengunjung')->middleware('auth');
 Route::post('/laporan-pengunjung', [LaporanController::class, 'store'])->name('laporan.pengunjung.post')->middleware('auth');
-
 Route::post('/laporan/export', [LaporanController::class, 'export'])->name('laporan.export')->middleware('auth');

@@ -12,14 +12,14 @@
         </li>
 
         <li class="nav-item mb-3">
-            <span class="{{ request()->is('pembayaran*') ? 'active' : '' }}">
+            <span class="{{ request()->is('pembayaran*') || request()->is('submit-nominal') ? 'active' : '' }}">
                 <i class="fa-solid fa-credit-card"></i>
                 Pembayaran
                 <!-- <span class="notification-badge">5</span> -->
             </span>
         </li>
         <li class="nav-item">
-            <span class="{{ request()->is('cetak*') ? 'active' : '' }}">
+            <span class="{{ request()->is('struk*') ? 'active' : '' }}">
                 <i class="fa-solid fa-print"></i>
                 Cetak Tiket
             </span>

@@ -3,6 +3,13 @@
 
 <head>
     @include('includes.head')
+    <style>
+        body {
+            background-image: url('/image/lion.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>

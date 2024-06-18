@@ -1,7 +1,7 @@
 @extends('layouts.progress')
 @section('content')
-    <div class="bg-success-2 flex-fill">
-        <div class="row d-flex h-100 align-items-center">
+    <div class="content content-1 flex-fill">
+        <div class="row d-flex h-100 align-items-center m-0">
             <div class="col-6 d-flex flex-column align-items-center">
                 <a href="{{ route('qris', ['value => 15000']) }}" class="text-decoration-none">
                     <div class="card text-center border-0 rounded-4" style="width: 28rem;">
