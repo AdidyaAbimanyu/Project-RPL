@@ -22,8 +22,8 @@
                     </div>
                 </div>
 
-                <div class="card text-center border-0 my-5" style="width: 18rem;">
-                    <div class="card-header border-0 bg-success text-white">
+                <div class="card text-center border-0 rounded-4 my-5" style="width: 18rem;">
+                    <div class="card-header border-0 bg-success rounded-4 text-white">
                         <h3>Dewasa</h3>
                     </div>
                     <div class="card-body">
